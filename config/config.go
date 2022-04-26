@@ -94,7 +94,7 @@ type Provider struct {
 }
 
 type Setter struct {
-	ChNo  string `yaml:"chno"`
+	ChNo  string `yaml:"tvg-chno"`
 	Name  string
 	Id    string
 	Logo  string

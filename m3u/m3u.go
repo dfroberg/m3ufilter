@@ -74,7 +74,7 @@ type Stream struct {
 	CUID     string `yaml:"CUID"`
 
 	// these are attributes
-	ChNo     string `yaml:"chno"`
+	ChNo     string `yaml:"tvg-chno"`
 	Id       string `yaml:"tvg-id"`
 	TvgName  string `yaml:"tvg-name"`
 	Shift    string `yaml:"tvg-shift"`
@@ -97,7 +97,7 @@ func (s Stream) GetName() string {
 	return name
 }
 
-// todo we can get rid of config as an argument by utilising some sort of state instead.
+// todo we can get rid of config as an argument by utilizing some sort of state instead.
 func decode(conf *config.Config, reader io.Reader, providerConfig *config.Provider, epg *xmltv.XMLTV) (Streams, error) {
 	buf := new(bytes.Buffer)
 	_, err := buf.ReadFrom(reader)

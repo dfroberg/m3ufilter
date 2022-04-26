@@ -37,6 +37,9 @@ func getStreamExtinf(stream *m3u.Stream) []byte {
 	writeKV(b, "tvg-id", stream.Id)
 	writeKV(b, "tvg-name", stream.GetName())
 	writeKV(b, "group-title", stream.Group)
+	if stream.Language != "" {
+		writeKV(b, "tvg-language", stream.Language)
+	}
 	writeKV(b, "tvg-logo", stream.Logo)
 
 	if stream.Shift != "" {

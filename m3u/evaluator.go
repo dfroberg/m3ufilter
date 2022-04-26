@@ -112,6 +112,7 @@ func evaluatorToTvgId(args ...interface{}) (interface{}, error) {
 
 	subject = strings.Replace(subject, "&", "and", -1)
 	subject = strings.TrimSpace(subject)
+	subject = strings.ToLower(subject)
 
 	re := cache.Regexp(`[^a-zA-Z0-9]`)
 	tvgId := re.ReplaceAllString(subject, "")
