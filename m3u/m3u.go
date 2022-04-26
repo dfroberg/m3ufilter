@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"crypto/md5"
 	"encoding/hex"
-	"errors"
 	"fmt"
 	"io"
 	"strings"
@@ -285,7 +284,7 @@ func parseExtinfLine(attrLine string, urlLine string) (*Stream, error) {
 
 		if c == '"' || c == '\'' {
 			if state != "value" {
-				return nil, errors.New(fmt.Sprintf("Unexpected character '%s' found, expected '=' for key %s on position %d in line: %s", string(c), key, i, attrLine))
+				return nil, fmt.Errorf("Unexpected character '%s' found, expected '=' for key %s on position %d in line: %s", string(c), key, i, attrLine)
 			}
 			state = "quotes"
 			quote = string(c)
@@ -323,11 +322,11 @@ func parseExtinfLine(attrLine string, urlLine string) (*Stream, error) {
 	}
 
 	if state == "keyname" && value == "" {
-		return nil, errors.New(fmt.Sprintf("Key %s started but no value assigned on line: %s", key, attrLine))
+		return nil, fmt.Errorf("Key %s started but no value assigned on line: %s", key, attrLine)
 	}
 
 	if state == "quotes" {
-		return nil, errors.New(fmt.Sprintf("Unclosed quote on line: %s", attrLine))
+		return nil, fmt.Errorf("Unclosed quote on line: %s", attrLine)
 	}
 
 	stream.Name = strings.TrimSpace(stream.Name)

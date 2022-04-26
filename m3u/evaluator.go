@@ -1,7 +1,6 @@
 package m3u
 
 import (
-	"errors"
 	"fmt"
 	"strings"
 
@@ -55,7 +54,7 @@ func evaluateBool(ms *Stream, expr string) (result bool, err error) {
 		//fmt.Printf("Result: %v", v)
 		return v, nil
 	default:
-		return false, errors.New(fmt.Sprintf("unexpected type %T, expected bool for expr: %s", v, expr))
+		return false, fmt.Errorf("unexpected type %T, expected bool for expr: %s", v, expr)
 	}
 }
 
@@ -69,7 +68,7 @@ func evaluateStr(ms *Stream, expr string) (result string, err error) {
 	case string:
 		return v, nil
 	default:
-		return "", errors.New(fmt.Sprintf("unexpected type %T, expected string", v))
+		return "", fmt.Errorf("unexpected type %T, expected string", v)
 	}
 }
 
