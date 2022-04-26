@@ -1,9 +1,10 @@
 package m3u
 
 import (
-	"github.com/hoshsadiq/m3ufilter/config"
 	"net/http"
 	"strings"
+
+	"github.com/dfroberg/m3ufilter/config"
 )
 
 // returns whether or not a stream should be included in the list

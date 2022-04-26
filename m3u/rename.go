@@ -1,10 +1,11 @@
 package m3u
 
 import (
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/m3u/xmltv"
 	"regexp"
 	"strings"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/m3u/xmltv"
 )
 
 func setSegmentValues(ms *Stream, epgChannel *xmltv.Channel, setters []*config.Setter) {

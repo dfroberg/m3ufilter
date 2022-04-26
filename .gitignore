@@ -2,7 +2,7 @@
 /config.yaml
 /config.yml
 /*.m3u
-
+.vscode
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Go template

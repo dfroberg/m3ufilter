@@ -2,8 +2,9 @@ package server
 
 import (
 	"errors"
-	"github.com/hoshsadiq/m3ufilter/m3u/xmltv"
 	"net/http"
+
+	"github.com/dfroberg/m3ufilter/m3u/xmltv"
 )
 
 func getEpg(state *httpState, w http.ResponseWriter, r *http.Request) error {

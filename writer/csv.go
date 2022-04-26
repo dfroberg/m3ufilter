@@ -2,8 +2,9 @@ package writer
 
 import (
 	"encoding/csv"
-	"github.com/hoshsadiq/m3ufilter/m3u"
 	"io"
+
+	"github.com/dfroberg/m3ufilter/m3u"
 )
 
 var csvHeaders = []string{

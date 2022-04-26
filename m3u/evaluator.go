@@ -3,9 +3,10 @@ package m3u
 import (
 	"errors"
 	"fmt"
-	"github.com/hoshsadiq/m3ufilter/cache"
-	"github.com/maja42/goval"
 	"strings"
+
+	"github.com/dfroberg/m3ufilter/cache"
+	"github.com/maja42/goval"
 )
 
 var evaluator = goval.NewEvaluator()

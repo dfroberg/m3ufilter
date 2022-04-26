@@ -2,10 +2,11 @@ package xmltv
 
 import (
 	"encoding/xml"
-	"github.com/hoshsadiq/m3ufilter/m3u/filter"
 	"io"
 	"strings"
 	"time"
+
+	"github.com/dfroberg/m3ufilter/m3u/filter"
 )
 
 // These structs are copied from the xteve project, with some slight adjustments

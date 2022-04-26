@@ -2,9 +2,10 @@ package server
 
 import (
 	"errors"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/hoshsadiq/m3ufilter/writer"
 	"net/http"
+
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/dfroberg/m3ufilter/writer"
 )
 
 func getPlaylist(state *httpState, w http.ResponseWriter, r *http.Request) error {

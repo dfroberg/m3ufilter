@@ -40,12 +40,12 @@ jobs:
         - bash ci/docker-manifest.sh
         - bash ci/docker-push-readme.sh "$TRAVIS_REPO_SLUG" ./docker-hub-readme.md
       deploy: ~
-      if: repo == "hoshsadiq/m3ufilter" && tag IS present
+      if: repo == "dfroberg/m3ufilter" && tag IS present
 env:
   global:
     - GO111MODULE=on
     - CGO_ENABLED=0
-    - DOCKER_USERNAME=hoshsadiq
+    - DOCKER_USERNAME=dfroberg
     - secure: "kcpY/XlyxCEKmnXsreRXX2aij8/rezYdVprfFrEeSd8Z38HWxxzXVOsyU8hUIVzbRN9teNeaam+tkR5KluNdPNZHSca5LtlpHcO1RAMhooeJYktiVQUbzHkH7DJ0mh4BjxPmHro+R7mh9tLtQa6rSV87vKgR2GvAchJfhqoFAaG2SS5LPDfziO8JdpWXl7p8ULmG/rnJA/gS4WdXIle5S23Up9jt/0YDedw6nrqkjJeRyhDxdgAG8jP+T0/WsqzV3S0muwxNKuSOqnKAdvM8mEGP2l0GRVdS9ct0eXezH6Ox1tUz9amNZ8agN+4tQlgTlmrV0WwEjtf59gg3os+a6xzWD/9ZkqJCEmRtby+33/MjRt8bRsA3sBpeei6yV2OTbFlNDZf5eyMgyn9dBKzLX1LBbFIrbLB6zHqKG33BVMOql6XrqG/Kx+z6rQR216gNxL/pZ8PMCKpu8ZmKYsuAQp+55ixpr/RBVZTyPYiTXWOkg+qEPLVr/UBkDHumv/Tijkrj77fRvvJU3NETuaHC+KidqnL1pVJ+53zGdhQ4rYqtJyXqzSD+3tHTqE4H2b1XI1Um81E0bw0jzWegjYVg5BQpLkj/bopTl2grOwcpNt3RLChIXY8Up4xI/iRBo7U6M2IHtNFXQZ3XfQaU79sfHU29TutFO7EbfjRUkuBr/u0="
 
   matrix:
@@ -78,11 +78,11 @@ script:
   - export BUILD_DATE="$(date --iso-8601=seconds)"
   - gox
       -ldflags "
-        -X github.com/hoshsadiq/m3ufilter/config.Version=${TRAVIS_TAG:-nightly}
-        -X github.com/hoshsadiq/m3ufilter/config.GitCommit=${TRAVIS_COMMIT}
-        -X github.com/hoshsadiq/m3ufilter/config.BuildDate=${BUILD_DATE}
-        -X github.com/hoshsadiq/m3ufilter/config.GoVersion=${TRAVIS_GO_VERSION}
-        -X github.com/hoshsadiq/m3ufilter/config.Platform=${OS}/${ARCH}
+        -X github.com/dfroberg/m3ufilter/config.Version=${TRAVIS_TAG:-nightly}
+        -X github.com/dfroberg/m3ufilter/config.GitCommit=${TRAVIS_COMMIT}
+        -X github.com/dfroberg/m3ufilter/config.BuildDate=${BUILD_DATE}
+        -X github.com/dfroberg/m3ufilter/config.GoVersion=${TRAVIS_GO_VERSION}
+        -X github.com/dfroberg/m3ufilter/config.Platform=${OS}/${ARCH}
       "
       -osarch "$OS/$ARCH"
       -output "build/m3u-filter_{{.OS}}_{{.Arch}}"
@@ -133,11 +133,11 @@ deploy:
     api_key:
       secure: CnjUhD6PoSZ1qv+/OjdJ7c1QLyPX3X31hXRMkgcG4trP8W+QrDDmixYpcJbHdc/mNrFsiJ8/L2Qm8mLUnSaLIf/HbSHp0EzxKuDU2Rdb2MGRuDUqLyWSHGbY67otTXvEYVagoFmg8s6cEVincDMckD47uyw5L2NduwyNs0hg1TizVZyTnfAba2WsKSwHJpA01yVRTuIH92J38jFWUjqZkgDyMVYG7G7vb+mU3WNLyxBfzJVkLXzOWx0ELyxWi6X9BT/8Ib0Q/m3SUFan3XteQlMkeSEUPnbdmfL4FYlm/oXfqrigunRCp7edD1wgnrP3sHkKbl5NtHU5I6BHFaiT42M8Rr1Snp9wOzvCtjDb+1Ory84+L8iYcueXh0SXNvgCxkZBYsiFVsOEwz8dWpFqVW6R8ADY6x65VhEyBICbRL2kbRgpZyfTlb9nJKw6ZlWwmPDracxKexGD62BTSdlvL0s8C2Y/aJf90oYOAPvv0VuvzE4CUrPod7eKKR/saHhmzrYolLh4Hta552u0uHZNRTsLxVJXuW2QZfKodNJFQWsrDNADPd69Fg1m3USgkspClfb0uQkt5gpaqVE9x9BP0qGjzJ2P/WqNt36qTKLxbtIMcrdmIj7DalxgBeBy9c9OAljs6MjVdcbJWo0Sht7JE5jdM4lVhVjvSRBtgYRInIA=
     on:
-      repo: hoshsadiq/m3ufilter
+      repo: dfroberg/m3ufilter
       tags: true
   - provider: script
     script: bash ci/docker-push.sh
     on:
-      repo: hoshsadiq/m3ufilter
+      repo: dfroberg/m3ufilter
       tags: true
       condition: $OS = "linux"

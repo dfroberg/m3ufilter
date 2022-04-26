@@ -1,9 +1,10 @@
 package config
 
 import (
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
+
+	"github.com/dfroberg/m3ufilter/logger"
+	"gopkg.in/yaml.v2"
 )
 
 var log = logger.Get()

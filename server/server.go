@@ -1,11 +1,12 @@
 package server
 
 import (
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/hoshsadiq/m3ufilter/m3u"
-	"github.com/mileusna/crontab"
 	"net/http"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/dfroberg/m3ufilter/m3u"
+	"github.com/mileusna/crontab"
 )
 
 var log = logger.Get()

@@ -1,6 +1,6 @@
 # m3ufilter
 
-All docker images are single binary. The images are built using a [this pipeline](https://github.com/hoshsadiq/m3ufilter/blob/master/.travis.yml).
+All docker images are single binary. The images are built using a [this pipeline](https://github.com/dfroberg/m3ufilter/blob/master/.travis.yml).
 
 ## Tags available
 
@@ -8,4 +8,4 @@ All docker images are single binary. The images are built using a [this pipeline
 
 In the future, aside the `latest` tag, there will also be a `stable` tag, which will only include stable releases (no alpha/beta/nightly), as well as tags for major, minor and patch versions.
 
-For more information on configuring the filter, see the project [README.md](https://github.com/hoshsadiq/m3ufilter/blob/master/README.md)
+For more information on configuring the filter, see the project [README.md](https://github.com/dfroberg/m3ufilter/blob/master/README.md)

@@ -2,15 +2,16 @@ package m3u
 
 import (
 	"bufio"
-	"github.com/PuerkitoBio/rehttp"
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/hoshsadiq/m3ufilter/m3u/xmltv"
 	"net/http"
 	"net/url"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/PuerkitoBio/rehttp"
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/dfroberg/m3ufilter/m3u/xmltv"
 )
 
 var log = logger.Get()

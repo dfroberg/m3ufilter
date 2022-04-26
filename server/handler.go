@@ -1,11 +1,12 @@
 package server
 
 import (
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/m3u"
-	"github.com/hoshsadiq/m3ufilter/m3u/xmltv"
-	"github.com/mileusna/crontab"
 	"net/http"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/m3u"
+	"github.com/dfroberg/m3ufilter/m3u/xmltv"
+	"github.com/mileusna/crontab"
 )
 
 type httpState struct {

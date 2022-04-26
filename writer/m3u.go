@@ -1,10 +1,11 @@
 package writer
 
 import (
-	"github.com/hoshsadiq/m3ufilter/m3u"
 	"io"
 	"strconv"
 	"strings"
+
+	"github.com/dfroberg/m3ufilter/m3u"
 )
 
 func writeM3U(w io.Writer, streams []*m3u.Stream) {

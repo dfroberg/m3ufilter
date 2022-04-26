@@ -1,4 +1,4 @@
-# NOTE: PROJECT ABANDONED
+# NOTE: Most of the stuff then can be done by this tool can be done manually in TVHeadEnd, but if you don't want your installation to completely choke on channels you'll never watch, use this tool to make a sub selection of your main feed by picking the stuff you really want.
 
 I suggest you invest some into setting up TVHeadend instead. It can do what m3ufilter does, and more, and better. If you are willing to take over the project, feel free to raise an issue.
 
@@ -108,17 +108,17 @@ epg_providers:
 - `providers.check_streams.method` (`head|get`)
 
     How to validate whether a stream is available or not. Either using a `HEAD` request or `GET` request.
-    
+
     The difference here is that `HEAD` is less likely to be correct. Often streams return that it is available when in reality is not. On the other hand, the GET method tries to actually retrieve zero bytes from the stream, thus this will give more accurate results. The problem with this is that, if your provider doesn't allow many connections at the same time, your stream will likely get cut off if the check is happening while you are watching a stream, and you'll have to wait until the update is finished before you can watch it without problems. If you time your updates to be when you're not watching any streams (e.g. when you're asleep for example), this shouldn't be a problem.
-    
+
     Another thing to consider here is that, currently the stream available is only updated when the full update runs. Should the stream because available before the next run, as far as m3ufilter is concerned, this stream will stay unavailable until the next.
-    
+
     Default: `head`
 
 - `providers.check_streams.action` (`remove|noop`)
 
     The action to take if a stream is unavailable. Remove or don't take any action. `noop` is useful if you want to change the name of the channel to something else, e.g. prefix it with `[Unavailable]`.
-    
+
     Default: `remove`
 
 - `providers.filters` (`list` of `string`)
@@ -262,6 +262,4 @@ The following server endpoints are available for use:
   This is used to force the application to retrieve the latest version of all the providers. This is an asynchronous operation, and will return 204 on success.
 
 ## Future plans
-The idea behind this is to be one stop shop for generating both xmltv and m3u files from any source.
-This will eventually add support for xml, and will automatically try to match up channels and EPG data should this not exist.
-Any other ideas you have? Feel free to raise a ticket.
+None

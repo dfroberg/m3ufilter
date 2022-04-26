@@ -2,15 +2,16 @@ package main
 
 import (
 	"flag"
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/hoshsadiq/m3ufilter/m3u"
-	"github.com/hoshsadiq/m3ufilter/server"
-	"github.com/hoshsadiq/m3ufilter/writer"
-	"github.com/mitchellh/go-homedir"
 	"os"
 	"path/filepath"
 	"runtime"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/dfroberg/m3ufilter/m3u"
+	"github.com/dfroberg/m3ufilter/server"
+	"github.com/dfroberg/m3ufilter/writer"
+	"github.com/mitchellh/go-homedir"
 )
 
 var (

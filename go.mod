@@ -1,4 +1,4 @@
-module github.com/hoshsadiq/m3ufilter
+module github.com/dfroberg/m3ufilter
 
 go 1.14
 
@@ -18,4 +18,4 @@ require (
 	gopkg.in/yaml.v2 v2.2.2
 )
 
-replace github.com/maja42/goval => github.com/hoshsadiq/goval v1.0.1-0.20190525223338-f1ea9f026acd
+replace github.com/maja42/goval => github.com/dfroberg/goval v1.2.1

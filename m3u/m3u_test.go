@@ -2,10 +2,6 @@ package m3u
 
 import (
 	"encoding/json"
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/sirupsen/logrus"
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -13,6 +9,11 @@ import (
 	"sort"
 	"strings"
 	"testing"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/sirupsen/logrus"
+	"gopkg.in/yaml.v2"
 )
 
 func TestGroupOrder(t *testing.T) {

@@ -2,9 +2,10 @@ package writer
 
 import (
 	"fmt"
-	"github.com/hoshsadiq/m3ufilter/logger"
-	"github.com/hoshsadiq/m3ufilter/m3u"
 	"io"
+
+	"github.com/dfroberg/m3ufilter/logger"
+	"github.com/dfroberg/m3ufilter/m3u"
 )
 
 var log = logger.Get()

@@ -6,12 +6,13 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"github.com/hoshsadiq/m3ufilter/config"
-	"github.com/hoshsadiq/m3ufilter/m3u/filter"
-	"github.com/hoshsadiq/m3ufilter/m3u/xmltv"
 	"io"
 	"strings"
 	"time"
+
+	"github.com/dfroberg/m3ufilter/config"
+	"github.com/dfroberg/m3ufilter/m3u/filter"
+	"github.com/dfroberg/m3ufilter/m3u/xmltv"
 )
 
 var groupOrder map[string]int
