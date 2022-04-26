@@ -137,7 +137,7 @@ epg_providers:
 
 - `providers.setters.attributes`
 
-    What to set any attribute too. This is go for setting logos where none exist, and/or enforcing `tvg-id` in case a channel does not have one but should. All attributes are listed below. This again, must return a string, and has the functions and variables below available.
+    What to set any attribute too. This is good for setting logos where none exist, and/or enforcing `tvg-id` in case a channel does not have one but should. All attributes are listed below. This again, must return a string, and has the functions and variables below available.
 
     Example
     ```yaml
